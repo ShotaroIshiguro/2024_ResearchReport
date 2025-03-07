@@ -156,6 +156,19 @@ python demos/test_emoca_on_images.py --input_folder demos/test_images \
     --save_mesh True --save_codes True
 ```
 
+## まとめて実行(AffectNetのみ対応)
+### Training stage1
+- DECA or EMOCA, ResNet18 or ResNet50の4パターンに対応  
+`./stage1_scripts_run.sh`
+### Training stage 2
+- 個人アルバムを作成してから実行
+- `people`変数に人物名を入れる  
+`./stage2_run_all.sh`
+### 推論
+- 1枚のターゲット画像に対して`ソース画像人物数×16(モデル数)×ソース人物パターン数`の画像が生成
+`./stage3_shapness`
+
+
 ## References
 1. DiffusionRig: Learning Personalized Priors for Facial Appearance Editing  
 CVPR 2023  
@@ -234,23 +247,4 @@ https://github.com/NVlabs/ffhq-dataset
       url={https://arxiv.org/abs/1812.04948}, 
 }
 ```
-
-### How to use git
-
-- githubからSSHキーを取得
-    git@github.com:ShotaroIshiguro/DiffusionRig_EMO-test-.git
-- `git init`で追加したいファイルがあるローカルディレクトリにて受け入れ準備
-- `git remote add origin SSH_KEY`
-- `git status`で現状況確認(masterブランチにいたら`git branch -M main`でmainブランチに移動)
-- `git fetch`でリモートから最新情報を取得
-- `git pull origin main`でローカルのmainブランチに反映
-- `git add ADD_FILE` or `git add ADD_FILE/`でステージング領域に追加
-- `git status`でステージングを確認
-- `git commit -m "コメント追加"`でコミット
-- `git push origin main`でプッシュ
-
-
-
-
-
 
