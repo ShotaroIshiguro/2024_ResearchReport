@@ -1,2 +1,3 @@
 - 定期ゼミ資料
 - DiffusionRig-EMOのコード
+- EmoNet, MaxViTによる評価を行うコード(掲載時期未定)
